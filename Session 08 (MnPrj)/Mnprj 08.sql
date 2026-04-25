@@ -185,7 +185,6 @@ WHERE CustomerID NOT IN(SELECT CustomerID FROM Orders o WHERE c.CustomerID = o.C
 -- 7.
 SELECT CategoryName, TotalRevenue
 FROM (
-
     SELECT c.CategoryName, SUM(od.UnitPrice * od.Quantity) as TotalRevenue
     FROM Category c
     JOIN Product p ON c.CategoryID = p.CategoryID
